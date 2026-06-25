@@ -10,6 +10,11 @@
 ```bash
 sudo apt update
 sudo apt install mysql-client -y
+sudo apt install docker.io -y
+sudo systemtl start docker
+sudo usermod -aG docker sachin
+su - sachin
+newgrp docker
 ```
 **Login To RDS**
 ````
@@ -57,7 +62,7 @@ git clone https://github.com/Alpesh-Rajendra/Project-Studentapp_Updated.git
 - Navigate to the backend directory:
 
 ```bash
-cd studentapp_updated/backend
+cd studentapp_updated/Backend
 ```
 
 #### edit
@@ -94,7 +99,13 @@ ENV DB_URL=jdbc:mariadb://localhost:3306/student_db \
 
 CMD ["java", "-jar", "app.jar"]
 ```
+---
+### change Dockerfile permission
 
+```
+sudo chmod 777 Dockerfile
+```
+---
 
 ### after apply docker build command 
 
@@ -111,7 +122,7 @@ docker run -itd --name back-app  -e DB_PASSWORD=Navin#db -p 8080:8080 student-ba
 ````
 docker ps
 ````
-
+---
 
 # 3. Frontend
 
@@ -122,9 +133,16 @@ cd ../Frontend
 ```
 ### connect backend to frontend
 - add backend IP into "src/api/userService.js"
+- 
+- ```
+  sudo vim src/api/userService.js
+  ```
 
 ## now back to frontend dir and edit dockerfile
 - replace your backend ip ````ENV REACT_APP_BACKEND_URL=http://13.60.38.103:8080````
+- ```
+  sudo vim Dockerfile
+  ```
   
 ```Dockerfile
 # ---------- Stage 1: Build React App ----------
@@ -171,6 +189,6 @@ docker build -t student-frontend .
 ````
 docker run -itd --name studentapp -p 80:80 student-frontend
 ````
-
+---
 # 4. Copy Instance ip and Access Studentapp
 <img width="1918" height="950" alt="image" src="https://github.com/user-attachments/assets/c58a3d59-d9c3-4901-a28a-652535c478dc" />
