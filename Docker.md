@@ -52,7 +52,7 @@ exit
 - Clone the repository:
 
 ```bash
-git clone https://github.com/abhipraydhoble/Project-Studentapp_Updated.git
+git clone https://github.com/Alpesh-Rajendra/Project-Studentapp_Updated.git
 ```
 - Navigate to the backend directory:
 
