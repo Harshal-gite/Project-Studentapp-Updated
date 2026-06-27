@@ -1,4 +1,4 @@
-# Project using docker 
+# Project using docker made by sachin & harshu 
 
 
 
@@ -12,8 +12,9 @@ sudo apt update
 sudo apt install mysql-client -y
 sudo apt install docker.io -y
 sudo systemtl start docker
-sudo usermod -aG docker sachin
-su - sachin
+sudo useradd -m harshu
+sudo usermod -aG docker harshu
+su - harshu
 newgrp docker
 ```
 **Login To RDS**
@@ -57,7 +58,7 @@ exit
 - Clone the repository:
 
 ```bash
-git clone https://github.com/sachin-rathod-tech/Project-Studentapp-Updated.git
+git clone https://github.com/Harshal-gite/harshu-gite.git/Project-Studentapp-Updated.git
 ```
 - Navigate to the backend directory:
 
@@ -67,7 +68,7 @@ cd studentapp_updated/Backend
 
 #### edit
   ````
-  vim src/main/resources/application.properties
+  sudo vim src/main/resources/application.properties
   ````
   - add database endpoint
   - username
